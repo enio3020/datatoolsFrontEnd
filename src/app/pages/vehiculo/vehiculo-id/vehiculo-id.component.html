@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-encabezado-vehi></app-encabezado-vehi>
+<br>
+<div class="container">
+    <app-alert></app-alert>
+    <div class="card">
+      <div class="card-header">Vincular Conductores</div>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Conductores disponibles</label>
+            <select
+              class="form-control"
+              id=""
+              [formControlName]="'conductorId'"
+              placeholder="Seleccione un Tipo de Documento"
+              required
+            >
+                <option value="">Seleccione un conductor</option>
+                <option *ngFor="let conductor of conductores" [value]="conductor.condId">{{(conductor)?.condNombreCompleto}} - {{(conductor)?.condTipoDocumento}} - {{(conductor)?.condDocumento}}</option>
+            </select>
+            <div
+              *ngIf="f['conductorId'].touched && f['conductorId'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['conductorId'].errors?.['required']">El conductor es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col text-center">
+              <button
+                (click)="recarga()"
+                [disabled]="!myForm.valid"
+                class="btn btn-primary"
+                type="submit"
+              >
+                Vincular
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<app-list-conductor [recargar]="xrecargar"></app-list-conductor>
+<app-footer></app-footer>

@@ -1,0 +1,252 @@
+<div class="container">
+  <app-alert></app-alert>
+    <div class="card">
+      <div class="card-header">Registrar Empresa</div>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Nombre Completo</label>
+            <input
+              formControlName="emprNombreCompleto"
+              id="emprNombreCompleto"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprNombreCompleto'].touched && f['emprNombreCompleto'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprNombreCompleto'].errors?.['required']">Nombre completo es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Tipo de Documento</label>
+            <select
+              class="form-control"
+              id=""
+              [formControlName]="'emprTipoDocumento'"
+              placeholder="Seleccione un Tipo de Documento"
+              required
+            >
+              <option>CEDULA DE CIUDADANIA</option>
+              <option>CEDULA DE EXTRANJERIA</option>
+              <option>NIT</option>
+              <option>TARJETA DE IDENTIDAD</option>
+            </select>
+            <div
+              *ngIf="f['emprTipoDocumento'].touched && f['emprTipoDocumento'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprTipoDocumento'].errors?.['required']">Tipo de Documento es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Documento</label>
+            <input
+              formControlName="emprDocumento"
+              id="emprDocumento"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprDocumento'].touched && f['emprDocumento'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprDocumento'].errors?.['required']">Documento es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Telefono</label>
+            <input
+              formControlName="emprTelefono"
+              id="emprTelefono"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprTelefono'].touched && f['emprTelefono'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprTelefono'].errors?.['required']">Telefono es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>País</label>
+            <input
+              formControlName="emprPais"
+              id="emprPais"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprPais'].touched && f['emprPais'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprPais'].errors?.['required']">País es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Departamento</label>
+            <input
+              formControlName="emprDepartamento"
+              id="emprDepartamento"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprDepartamento'].touched && f['emprDepartamento'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprDepartamento'].errors?.['required']">Departamento es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Cuidad</label>
+            <input
+              formControlName="emprCiudad"
+              id="emprCiudad"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprCiudad'].touched && f['emprCiudad'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprCiudad'].errors?.['required']">Cuidad es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Direccion</label>
+            <input
+              formControlName="emprDireccion"
+              id="emprDireccion"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['emprDireccion'].touched && f['emprDireccion'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['emprDireccion'].errors?.['required']">Direccion es requerido.</div>
+            </div>
+          </div>
+
+          <!--Representante Legal-->
+
+
+          <div class="form-group">
+            <label for="name">Nombre Completo del Representante Legal</label>
+            <input
+              formControlName="emprLegalNombreCompleto"
+              id="emprLegalNombreCompleto"
+              type="text"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Tipo de Documento del Representante Legal</label>
+            <select
+              class="form-control"
+              id=""
+              [formControlName]="'emprLegalTipoDocumento'"
+              placeholder="Seleccione un Tipo de Documento"
+            >
+              <option>CEDULA DE CIUDADANIA</option>
+              <option>CEDULA DE EXTRANJERIA</option>
+              <option>NIT</option>
+              <option>TARJETA DE IDENTIDAD</option>
+            </select>
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Documento del Representante Legal</label>
+            <input
+              formControlName="emprLegalDocumento"
+              id="emprLegalDocumento"
+              type="number"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Telefono del Representante Legal</label>
+            <input
+              formControlName="emprLegalTelefono"
+              id="emprLegalTelefono"
+              type="number"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">País del Representante Legal</label>
+            <input
+              formControlName="emprLegalPais"
+              id="emprLegalPais"
+              type="text"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Departamento del Representante Legal</label>
+            <input
+              formControlName="emprLegalDepartamento"
+              id="emprLegalDepartamento"
+              type="text"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Cuidad del Representante Legal</label>
+            <input
+              formControlName="emprLegalCiudad"
+              id="emprLegalCiudad"
+              type="text"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="form-group">
+            <label for="name">Direccion del Representante Legal</label>
+            <input
+              formControlName="emprLegalDireccion"
+              id="emprLegalDireccion"
+              type="text"
+              class="form-control"
+            />
+          </div>
+  
+          <div class="row">
+            <div class="col text-center">
+              <button
+                (click)="recarga()"
+                [disabled]="!myForm.valid"
+                class="btn btn-primary"
+                type="submit"
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-empresa-list [recargar]="xrecargar"></app-empresa-list>

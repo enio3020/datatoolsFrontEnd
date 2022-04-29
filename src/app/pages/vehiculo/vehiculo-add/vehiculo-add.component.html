@@ -1,0 +1,227 @@
+<div class="container">
+    <app-alert></app-alert>
+    <div class="card">
+      <div class="card-header">Registrar Vehiculos</div>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Placa</label>
+            <input
+              formControlName="vehiPlaca"
+              id="vehiPlaca"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiPlaca'].touched && f['vehiPlaca'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiPlaca'].errors?.['required']">La placa es requerida.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Motor</label>
+            <input
+              formControlName="vehiMotor"
+              id="vehiMotor"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiMotor'].touched && f['vehiMotor'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiMotor'].errors?.['required']">El motor es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Chasis</label>
+            <input
+              formControlName="vehiChasis"
+              id="vehiChasis"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiChasis'].touched && f['vehiChasis'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiChasis'].errors?.['required']">El chasis es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Modelo</label>
+            <input
+              formControlName="vehiModelo"
+              id="vehiModelo"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiModelo'].touched && f['vehiModelo'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiModelo'].errors?.['required']">El modelo es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Fecha de Matricula</label>
+            <input
+              formControlName="vehiFechaMatricula"
+              id="vehiFechaMatricula"
+              type="date"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiFechaMatricula'].touched && f['vehiFechaMatricula'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiFechaMatricula'].errors?.['required']">La fecha de Matricula es requerida.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Numero de pasajeros sentados</label>
+            <input
+              formControlName="vehiPasajeroSentados"
+              id="vehiPasajeroSentados"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiPasajeroSentados'].touched && f['vehiPasajeroSentados'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiPasajeroSentados'].errors?.['required']">El numero de pasajeros sentados es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Numero de pasajeros de pie</label>
+            <input
+              formControlName="vehiPasajeroPie"
+              id="vehiPasajeroPie"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiPasajeroPie'].touched && f['vehiPasajeroPie'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiPasajeroPie'].errors?.['required']">El numero de pasajeros de pie es requerido.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Peso seco</label>
+            <input
+              formControlName="vehiPesoSeco"
+              id="vehiPesoSeco"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiPesoSeco'].touched && f['vehiPesoSeco'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiPesoSeco'].errors?.['required']">El peso seco es requerido.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Peso Bruto</label>
+            <input
+              formControlName="vehiPesoBruto"
+              id="vehiPesoBruto"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiPesoBruto'].touched && f['vehiPesoBruto'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiPesoBruto'].errors?.['required']">El peso bruto es requerido.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Cantidad de Puertas</label>
+            <input
+              formControlName="vehiCantidadPuertas"
+              id="vehiCantidadPuertas"
+              type="number"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiCantidadPuertas'].touched && f['vehiCantidadPuertas'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiCantidadPuertas'].errors?.['required']">La cantidad de Puertas es requerida.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Marca</label>
+            <input
+              formControlName="vehiMarca"
+              id="vehiMarca"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiMarca'].touched && f['vehiMarca'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiMarca'].errors?.['required']">La marca es requerida.</div>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Linea</label>
+            <input
+              formControlName="vehiLinea"
+              id="vehiLinea"
+              type="text"
+              class="form-control"
+              required
+            />
+            <div
+              *ngIf="f['vehiLinea'].touched && f['vehiLinea'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiLinea'].errors?.['required']">La linea es requerida.</div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col text-center">
+              <button
+                (click)="recarga()"
+                [disabled]="!myForm.valid"
+                class="btn btn-primary"
+                type="submit"
+              >
+                Guardar
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+  <app-vehiculo-list [recargar]="xrecargar"></app-vehiculo-list>

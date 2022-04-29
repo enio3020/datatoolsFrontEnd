@@ -1,0 +1,55 @@
+<div *ngIf="recargar" class="container">
+    <br>
+    <div class="card">
+      <div class="card-header">
+        <h3>Lista de Vehiculo</h3>
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-striped table-inverse table-responsive">
+          <thead class="table-bordered">
+            <tr>
+              <th>Codigo</th>
+              <th>Placa</th>
+              <th>Motor</th>
+              <th>Chasis</th>
+              <th>Modelo</th>
+              <th>Fecha de Matricula</th>
+              <th>Numero de pasajeros sentados</th>
+              <th>Numero de pasajeros de pie</th>
+              <th>Peso seco</th>
+              <th>Peso bruto</th>
+              <th>Cantidad de puertas</th>
+              <th>Marca</th>
+              <th>Linea</th>
+              <th>Desvincular</th>
+            </tr>
+            </thead>
+            <tbody class="table-bordered">
+              <tr *ngFor="let vehiculo of vehiculos; let i = index" >
+                <td scope="row">{{ vehiculo.vehiId }}</td>
+                <td>{{ vehiculo.vehiPlaca }}</td>
+                <td>{{ vehiculo.vehiMotor }}</td>
+                <td>{{ vehiculo.vehiChasis }}</td>
+                <td>{{ vehiculo.vehiModelo }}</td>
+                <td>{{ vehiculo.vehiFechaMatricula | date: 'dd/MM/yyyy' }}</td>
+                <td>{{ vehiculo.vehiPasajeroSentados }}</td>
+                <td>{{ vehiculo.vehiPasajeroPie }}</td>
+                <td>{{ vehiculo.vehiPesoSeco }}</td>
+                <td>{{ vehiculo.vehiPesoBruto }}</td>
+                <td>{{ vehiculo.vehiCantidadPuertas }}</td>
+                <td>{{ vehiculo.vehiMarca }}</td>
+                <td>{{ vehiculo.vehiLinea }}</td>
+                <td class="hoverTable" style="text-align: center;" (click)="desvincular(vehiculo.vehiId)">
+                  <span>
+                    <fa-icon style="color:red" [icon]="faDelete"> {{vehiculo.vehiId}}</fa-icon>
+                  </span>
+                </td>
+              </tr>
+            </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
+  <div class="list row">

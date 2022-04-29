@@ -1,0 +1,57 @@
+<div *ngIf="recargar" class="container">
+    <br>
+    <div class="card">
+      <div class="card-header">
+        Lista de Empresas
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-striped table-inverse table-responsive">
+          <thead class="table-bordered">
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Tipo de Identificación</th>
+              <th>Numero de Identificación</th>
+              <th>País</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Telefono</th>
+              <th>Dirección</th>
+              <th>Nombre Representante Legal</th>
+              <th>Tipo de Identificación Representante Legal</th>
+              <th>Numero de Identificación Representante Legal</th>
+              <th>País Representante Legal</th>
+              <th>Departamento Representante Legal</th>
+              <th>Ciudad Representante Legal</th>
+              <th>Telefono Representante Legal</th>
+              <th>Dirección Representante Legal</th>
+            </tr>
+            </thead>
+            <tbody class="table-bordered">
+              <tr class="hoverTable" *ngFor="let empresa of empresas; let i = index" (click)="ruterLink(empresa.emprId)" >
+                <td scope="row">{{ empresa.emprId }}</td>
+                <td>{{ empresa.emprNombreCompleto }}</td>
+                <td>{{ empresa.emprTipoDocumento }}</td>
+                <td>{{ empresa.emprDocumento }}</td>
+                <td>{{ empresa.emprPais }}</td>
+                <td>{{ empresa.emprDepartamento }}</td>
+                <td>{{ empresa.emprCiudad }}</td>
+                <td>{{ empresa.emprTelefono }}</td>
+                <td>{{ empresa.emprDireccion }}</td>
+                <td>{{ empresa.emprLegalNombreCompleto }}</td>
+                <td>{{ empresa.emprLegalTipoDocumento }}</td>
+                <td>{{ empresa.emprLegalDocumento }}</td>
+                <td>{{ empresa.emprLegalPais }}</td>
+                <td>{{ empresa.emprLegalDepartamento }}</td>
+                <td>{{ empresa.emprLegalCiudad }}</td>
+                <td>{{ empresa.emprLegalTelefono }}</td>
+                <td>{{ empresa.emprLegalDireccion }}</td>
+              </tr>
+            </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
+  <div class="list row">

@@ -1,0 +1,21 @@
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h1>Vehiculo: {{vehiculo?.vehiPlaca}} - {{vehiculo?.vehiMarca}} </h1>
+        </div>
+        <div class="card-body">
+            <h5>Modelo: {{vehiculo?.vehiModelo}} - Motor: {{vehiculo?.vehiMotor}}</h5>
+        </div>
+    </div> 
+</div>
+<br>
+<div class="container">
+    <div class="card">
+        <div class="card-header">
+            <h2>Empresa vinculada: {{vehiculo?.empresaId?.emprNombreCompleto}}</h2>
+        </div>
+        <div class="card-body">
+            <h5>{{vehiculo?.empresaId?.emprTipoDocumento}} - {{vehiculo?.empresaId?.emprDocumento}}</h5>
+        </div>
+    </div> 
+</div>

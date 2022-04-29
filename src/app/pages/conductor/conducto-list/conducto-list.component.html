@@ -1,0 +1,41 @@
+<div *ngIf="recargar" class="container">
+    <br>
+    <div class="card">
+      <div class="card-header">
+        Lista de Conductores
+      </div>
+      <div class="card-body">
+  
+        <table class="table table-striped table-inverse table-responsive">
+          <thead class="table-bordered">
+            <tr>
+              <th>Codigo</th>
+              <th>Nombre</th>
+              <th>Tipo de Identificación</th>
+              <th>Numero de Identificación</th>
+              <th>País</th>
+              <th>Departamento</th>
+              <th>Ciudad</th>
+              <th>Telefono</th>
+              <th>Dirección</th>
+            </tr>
+            </thead>
+            <tbody class="table-bordered">
+              <tr class="hoverTable" *ngFor="let conductor of conductores; let i = index" (click)="ruterLink(conductor.condId)" >
+                <td scope="row">{{ conductor.condId }}</td>
+                <td>{{ conductor.condNombreCompleto }}</td>
+                <td>{{ conductor.condTipoDocumento }}</td>
+                <td>{{ conductor.condDocumento }}</td>
+                <td>{{ conductor.condPais }}</td>
+                <td>{{ conductor.condDepartamento }}</td>
+                <td>{{ conductor.condCiudad }}</td>
+                <td>{{ conductor.condTelefono }}</td>
+                <td>{{ conductor.condDireccion }}</td>
+              </tr>
+            </tbody>
+        </table>
+  
+      </div>
+    </div>
+  </div>
+  <div class="list row">

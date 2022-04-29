@@ -1,0 +1,47 @@
+<app-header></app-header>
+<app-encabezado-empr></app-encabezado-empr>
+<br>
+<div class="container">
+    <app-alert></app-alert>
+    <div class="card">
+      <div class="card-header">Vincular Vehiculos</div>
+      <div class="card-body">
+        <form [formGroup]="myForm" (ngSubmit)="submit()">
+          <div class="form-group">
+            <label for="name"><span style="color:red">*</span>Vehiculos disponibles</label>
+            <select
+              class="form-control"
+              id=""
+              [formControlName]="'vehiculoId'"
+              placeholder="Seleccione un Tipo de Documento"
+              required
+            >
+                <option value="">Seleccione un vehiculo</option>
+                <option *ngFor="let vehiculo of vehiculos" [value]="vehiculo.vehiId">{{(vehiculo)?.vehiPlaca}} - {{(vehiculo)?.vehiMarca}}</option>
+            </select>
+            <div
+              *ngIf="f['vehiculoId'].touched && f['vehiculoId'].invalid"
+              class="alert alert-danger"
+            >
+              <div *ngIf="f['vehiculoId'].errors?.['required']">El vehiculo es requerido.</div>
+            </div>
+          </div>
+  
+          <div class="row">
+            <div class="col text-center">
+              <button
+                (click)="recarga()"
+                [disabled]="!myForm.valid"
+                class="btn btn-primary"
+                type="submit"
+              >
+                Vincular
+              </button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+<app-list-vehiculo-empr [recargar]="xrecargar"></app-list-vehiculo-empr>
+<app-footer></app-footer>

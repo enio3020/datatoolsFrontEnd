@@ -1,0 +1,165 @@
+
+<div class="container">
+  <app-alert></app-alert>
+  <div class="card">
+    <div class="card-header">Registrar Conductores</div>
+    <div class="card-body">
+      <form [formGroup]="myForm" (ngSubmit)="submit()">
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Nombre Completo</label>
+          <input
+            formControlName="condNombreCompleto"
+            id="condNombreCompleto"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condNombreCompleto'].touched && f['condNombreCompleto'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condNombreCompleto'].errors?.['required']">Nombre completo es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Tipo de Documento</label>
+          <select
+            class="form-control"
+            id=""
+            [formControlName]="'condTipoDocumento'"
+            placeholder="Seleccione un Tipo de Documento"
+            required
+          >
+            <option>CEDULA DE CIUDADANIA</option>
+            <option>CEDULA DE EXTRANJERIA</option>
+            <option>NIT</option>
+            <option>TARJETA DE IDENTIDAD</option>
+          </select>
+          <div
+            *ngIf="f['condTipoDocumento'].touched && f['condTipoDocumento'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condTipoDocumento'].errors?.['required']">Tipo de Documento es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Documento</label>
+          <input
+            formControlName="condDocumento"
+            id="condDocumento"
+            type="number"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condDocumento'].touched && f['condDocumento'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condDocumento'].errors?.['required']">Documento es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Telefono</label>
+          <input
+            formControlName="condTelefono"
+            id="condTelefono"
+            type="number"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condTelefono'].touched && f['condTelefono'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condTelefono'].errors?.['required']">Telefono es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>País</label>
+          <input
+            formControlName="condPais"
+            id="condPais"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condPais'].touched && f['condPais'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condPais'].errors?.['required']">País es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Departamento</label>
+          <input
+            formControlName="condDepartamento"
+            id="condDepartamento"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condDepartamento'].touched && f['condDepartamento'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condDepartamento'].errors?.['required']">Departamento es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Cuidad</label>
+          <input
+            formControlName="condCiudad"
+            id="condCiudad"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condCiudad'].touched && f['condCiudad'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condCiudad'].errors?.['required']">Cuidad es requerido.</div>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="name"><span style="color:red">*</span>Direccion</label>
+          <input
+            formControlName="condDireccion"
+            id="condDireccion"
+            type="text"
+            class="form-control"
+            required
+          />
+          <div
+            *ngIf="f['condDireccion'].touched && f['condDireccion'].invalid"
+            class="alert alert-danger"
+          >
+            <div *ngIf="f['condDireccion'].errors?.['required']">Direccion es requerido.</div>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col text-center">
+            <button
+              (click)="recarga()"
+              [disabled]="!myForm.valid"
+              class="btn btn-primary"
+              type="submit"
+            >
+              Guardar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<app-conducto-list [recargar]="xrecargar"></app-conducto-list>
